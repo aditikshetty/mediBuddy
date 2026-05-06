@@ -1,29 +1,39 @@
-# MediBuddy - Your Health, Our Priority
+# MediBuddy - AI-Driven Multilingual Health Platform
 
-MediBuddy is a modern, mobile-first healthcare assistant application built with React, Vite, and Tailwind CSS. It provides a seamless experience for patients to consult doctors, order medicines, and manage their health records.
+MediBuddy is a state-of-the-art, AI-powered health platform designed to provide verified health information, myth-busting insights, and seamless medical consultations. Built with a focus on accessibility, it supports multiple major Indian languages.
 
 ## 🚀 Live Demo
-[https://medi-buddy-490634399265.us-central1.run.app](https://medi-buddy-490634399265.us-central1.run.app)
+**[https://medi-buddy-490634399265.us-central1.run.app](https://medi-buddy-490634399265.us-central1.run.app)**
 
-## ✨ Features
-- **Splash Screen**: Engaging entry point with a clean medical aesthetic.
-- **Home Dashboard**: Quick access to doctors, medicines, lab tests, and more.
-- **Doctor Consultation**: Instant video/audio/chat consultations with verified doctors.
-- **Medicine Store**: Comprehensive medicine catalog with easy "Add to Cart" and delivery tracking.
-- **Responsive Design**: Optimized for mobile and desktop screens.
+## ✨ Key Features
+
+### 🤖 AI Health Assistant
+- **Multilingual Support**: Interactive chatbot supporting English, Hindi, and Kannada.
+- **Myth Buster**: Real-time debunking of common medical myths with verified facts.
+- **Health FAQ**: Instant retrieval of verified health information and symptom guidance.
+- **Social Integration**: Ready-to-use links for WhatsApp and Telegram interaction.
+
+### 🌐 Global Accessibility
+- **Multilingual UI**: Seamless switching between English, Hindi, Bengali, Telugu, Marathi, Tamil, and Kannada.
+- **Web-First Design**: A professional, responsive layout optimized for all devices from mobile to desktop.
+
+### 🏥 Medical Services
+- **Doctor Consultation**: Premium interface for booking video, audio, or clinic visits.
+- **Pharmacy Store**: Complete e-commerce experience for ordering medicines with genuine product verification.
+- **Health Records**: Secure management of medical prescriptions and reports.
 
 ## 🛠️ Tech Stack
-- **Frontend**: React.js
-- **Styling**: Tailwind CSS
+- **Frontend**: React.js, Vite, Tailwind CSS
 - **Icons**: Lucide React
-- **Build Tool**: Vite
-- **Deployment**: Google Cloud Run
+- **Backend/Serving**: Node.js, Express
+- **Deployment**: Google Cloud Run (Dockerized)
+- **Languages**: HTML5, TypeScript, JavaScript
 
-## 📦 Getting Started
+## 📦 Local Development
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/aditikshetty/medi-buddy.git
+   git clone https://github.com/aditikshetty/mediBuddy.git
    ```
 
 2. **Install dependencies**
@@ -36,10 +46,10 @@ MediBuddy is a modern, mobile-first healthcare assistant application built with 
    npm run dev
    ```
 
-4. **Build for production**
+4. **Production Build**
    ```bash
    npm run build
    ```
 
 ## 📄 License
-This project is for demonstration purposes.
+Demonstration project for MediBuddy Health Services.
