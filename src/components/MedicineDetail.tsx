@@ -13,7 +13,7 @@ export default function MedicineDetail({ onNavigate, t }: Props) {
       <div className="px-6 md:px-10 pt-6 pb-6 flex justify-between items-center bg-white border-b border-gray-50">
         <button onClick={() => onNavigate('home')} className="flex items-center gap-2 text-gray-900 font-bold hover:text-primary transition-colors">
           <ArrowLeft size={20} />
-          <span>Back to Pharmacy</span>
+          <span>{t.backToPharmacy}</span>
         </button>
         <div className="flex items-center gap-6">
           <button className="text-gray-500 hover:text-rose-500 transition-colors">
@@ -34,7 +34,7 @@ export default function MedicineDetail({ onNavigate, t }: Props) {
             <div className="flex-1 space-y-6">
               <div className="aspect-square bg-gray-50 rounded-[40px] flex items-center justify-center border border-gray-100 relative overflow-hidden group shadow-inner">
                 <div className="text-[200px] md:text-[280px] select-none group-hover:scale-110 transition-transform duration-500">💊</div>
-                <div className="absolute top-6 left-6 bg-emerald-100 text-emerald-700 px-4 py-1.5 rounded-full text-sm font-black uppercase tracking-widest">In Stock</div>
+                <div className="absolute top-6 left-6 bg-emerald-100 text-emerald-700 px-4 py-1.5 rounded-full text-sm font-black uppercase tracking-widest">{t.inStock}</div>
                 <div className="absolute bottom-6 right-6 flex gap-2">
                    <div className="w-3 h-3 bg-primary rounded-full"></div>
                    <div className="w-3 h-3 bg-gray-200 rounded-full"></div>
@@ -54,7 +54,7 @@ export default function MedicineDetail({ onNavigate, t }: Props) {
             <div className="flex-1 flex flex-col pt-4">
               <div className="mb-8">
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Best Seller</span>
+                  <span className="text-xs font-bold text-primary uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">{t.bestSeller}</span>
                   <div className="flex items-center gap-1 text-yellow-400">
                     <Star size={14} className="fill-current" />
                     <Star size={14} className="fill-current" />
@@ -85,7 +85,7 @@ export default function MedicineDetail({ onNavigate, t }: Props) {
               </div>
 
               <div className="mb-10">
-                <h3 className="font-bold text-xl text-gray-900 mb-4">About Product</h3>
+                <h3 className="font-bold text-xl text-gray-900 mb-4">{t.aboutProduct}</h3>
                 <p className="text-gray-500 text-lg leading-relaxed max-w-xl">
                   Dolo 650 Tablet is a widely trusted medication used to relieve mild to moderate pain including headache, migraine, toothache, and musculoskeletal pain. It is also highly effective in reducing fever.
                 </p>
@@ -104,11 +104,17 @@ export default function MedicineDetail({ onNavigate, t }: Props) {
                 
                 <button className="flex-1 w-full bg-primary text-white h-16 rounded-2xl font-black text-xl shadow-2xl shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
                   <ShoppingCart size={24} />
-                  Add to Cart | ₹45.00
+                  {t.addToCart} | ₹45.00
                 </button>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      {/* Footer sticky bar for mobile translation */}
+      <div className="lg:hidden absolute bottom-0 left-0 w-full bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-3 z-20">
+        <div className="flex items-center justify-center gap-1.5 text-xs text-emerald-600 font-medium">
+          <Truck size={14} /> {t.deliveryTomorrow}
         </div>
       </div>
     </div>

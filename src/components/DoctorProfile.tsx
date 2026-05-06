@@ -13,16 +13,16 @@ export default function DoctorProfile({ onNavigate, t }: Props) {
       <div className="px-6 md:px-10 pt-6 pb-6 flex justify-between items-center bg-white border-b border-gray-50">
         <button onClick={() => onNavigate('home')} className="flex items-center gap-2 text-gray-900 font-bold hover:text-primary transition-colors">
           <ArrowLeft size={20} />
-          <span>Back to Home</span>
+          <span>{t.backToHome}</span>
         </button>
         <div className="flex items-center gap-4">
           <button className="flex items-center gap-2 text-gray-500 hover:text-rose-500 transition-colors font-medium">
             <Heart size={20} />
-            <span className="hidden sm:inline">Save</span>
+            <span className="hidden sm:inline">{t.save}</span>
           </button>
           <button className="flex items-center gap-2 text-gray-500 hover:text-primary transition-colors font-medium">
             <Share2 size={20} />
-            <span className="hidden sm:inline">Share</span>
+            <span className="hidden sm:inline">{t.share}</span>
           </button>
         </div>
       </div>
@@ -50,17 +50,17 @@ export default function DoctorProfile({ onNavigate, t }: Props) {
                   <div className="flex items-center gap-1.5 text-xl font-bold text-gray-900">
                     <Star size={20} className="fill-yellow-400 text-yellow-400" /> 4.9
                   </div>
-                  <span className="text-xs text-gray-400 font-bold uppercase tracking-wider">Rating</span>
+                  <span className="text-xs text-gray-400 font-bold uppercase tracking-wider">{t.rating}</span>
                 </div>
                 <div className="w-[1px] h-10 bg-gray-100 hidden sm:block"></div>
                 <div className="flex flex-col items-center md:items-start">
                   <div className="text-xl font-bold text-gray-900">2.3k+</div>
-                  <span className="text-xs text-gray-400 font-bold uppercase tracking-wider">Reviews</span>
+                  <span className="text-xs text-gray-400 font-bold uppercase tracking-wider">{t.reviews}</span>
                 </div>
                 <div className="w-[1px] h-10 bg-gray-100 hidden sm:block"></div>
                 <div className="flex flex-col items-center md:items-start">
                   <div className="text-xl font-bold text-gray-900">5k+</div>
-                  <span className="text-xs text-gray-400 font-bold uppercase tracking-wider">Patients</span>
+                  <span className="text-xs text-gray-400 font-bold uppercase tracking-wider">{t.patients}</span>
                 </div>
               </div>
 
@@ -76,7 +76,7 @@ export default function DoctorProfile({ onNavigate, t }: Props) {
             {/* Left Column: About & Info */}
             <div className="md:col-span-2 space-y-10">
               <section>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">About Doctor</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.aboutDoctor}</h3>
                 <p className="text-gray-500 text-lg leading-relaxed">
                   Dr. Neha Sharma is a highly skilled and experienced General Physician dedicated to providing comprehensive medical care. With a focus on preventive medicine and patient education, she has helped thousands of patients manage chronic conditions and achieve optimal health.
                 </p>
@@ -101,18 +101,18 @@ export default function DoctorProfile({ onNavigate, t }: Props) {
             <div className="space-y-6">
               <div className="bg-white border-2 border-gray-50 p-8 rounded-[32px] shadow-sm sticky top-28">
                 <div className="flex justify-between items-center mb-8 pb-6 border-b border-gray-50">
-                   <span className="text-gray-500 font-bold uppercase text-xs tracking-widest">Consultation Fee</span>
+                   <span className="text-gray-500 font-bold uppercase text-xs tracking-widest">{t.consultationFee}</span>
                    <span className="text-3xl font-black text-gray-900">₹499</span>
                 </div>
 
                 <div className="space-y-6 mb-8">
                    <div className="flex justify-between">
-                     <span className="text-gray-500 font-medium">Wait Time</span>
+                     <span className="text-gray-500 font-medium">{t.waitTime}</span>
                      <span className="text-gray-900 font-bold">15-20 Mins</span>
                    </div>
                    <div className="flex justify-between">
-                     <span className="text-gray-500 font-medium">Availability</span>
-                     <span className="text-emerald-600 font-bold">Available Today</span>
+                     <span className="text-gray-500 font-medium">{t.availability}</span>
+                     <span className="text-emerald-600 font-bold">{t.availableToday}</span>
                    </div>
                 </div>
 
