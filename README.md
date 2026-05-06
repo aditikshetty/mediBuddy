@@ -3,7 +3,7 @@
 MediBuddy is a modern, mobile-first healthcare assistant application built with React, Vite, and Tailwind CSS. It provides a seamless experience for patients to consult doctors, order medicines, and manage their health records.
 
 ## 🚀 Live Demo
-[Live Link will be inserted here]
+[https://medi-buddy-490634399265.us-central1.run.app](https://medi-buddy-490634399265.us-central1.run.app)
 
 ## ✨ Features
 - **Splash Screen**: Engaging entry point with a clean medical aesthetic.
