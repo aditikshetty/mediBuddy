@@ -2,11 +2,12 @@ import { Screen } from '../App';
 import { Menu, Bell, Search, User, Pill, FlaskConical, Shield, Activity, HeartPulse, FileText, LayoutGrid, Home as HomeIcon, Calendar, ShoppingBag, Heart } from 'lucide-react';
 
 interface Props {
-  onNavigate: (screen: Screen) => void;
+  onNavigate: (screen: Screen, serviceName?: string) => void;
   t: any;
+  userName: string;
 }
 
-export default function Home({ onNavigate, t }: Props) {
+export default function Home({ onNavigate, t, userName }: Props) {
   return (
     <div className="flex-1 flex flex-col bg-white overflow-hidden relative min-h-[80vh]">
       <div className="flex-1 overflow-y-auto p-6 md:p-10">
@@ -15,7 +16,7 @@ export default function Home({ onNavigate, t }: Props) {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10">
           <div>
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 flex items-center gap-3">
-              {t.welcome} <span className="text-2xl animate-pulse">👋</span>
+              {t.welcome.split(',')[0]}, {userName} <span className="text-2xl animate-pulse">👋</span>
             </h1>
             <p className="text-gray-500 text-lg mt-1">{t.subtitle}</p>
           </div>

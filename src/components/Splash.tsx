@@ -34,13 +34,13 @@ export default function Splash({ onNavigate, t }: Props) {
         {/* Actions */}
         <div className="w-full max-w-sm space-y-4">
           <button 
-            onClick={() => onNavigate('home')}
+            onClick={() => onNavigate('login')}
             className="w-full md:w-auto md:px-12 bg-primary text-white py-4 rounded-xl font-bold text-lg shadow-xl shadow-primary/30 transition-all hover:scale-105 active:scale-95"
           >
             {t.getStarted}
           </button>
           <div className="text-sm text-gray-500 mt-4">
-            {t.signin.split('?')[0]}? <span className="text-primary font-bold cursor-pointer hover:underline" onClick={() => onNavigate('home')}>{t.signin.split('?')[1]}</span>
+            {t.signin.split('?')[0]}? <span className="text-primary font-bold cursor-pointer hover:underline" onClick={() => onNavigate('login')}>{t.signin.split('?')[1]}</span>
           </div>
         </div>
       </div>

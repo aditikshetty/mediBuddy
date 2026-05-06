@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Splash from './components/Splash';
+import Login from './components/Login';
 import Home from './components/Home';
 import DoctorProfile from './components/DoctorProfile';
 import MedicineDetail from './components/MedicineDetail';
@@ -8,16 +9,22 @@ import Chatbot from './components/Chatbot';
 import { translations, Language } from './translations';
 import { Globe } from 'lucide-react';
 
-export type Screen = 'splash' | 'home' | 'doctor' | 'medicine' | 'service';
+export type Screen = 'splash' | 'login' | 'home' | 'doctor' | 'medicine' | 'service';
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState<Screen>('splash');
   const [lang, setLang] = useState<Language>('en');
   const [activeService, setActiveService] = useState<string>('');
+  const [userName, setUserName] = useState<string>('User');
 
   const navigate = (screen: Screen, serviceName?: string) => {
     if (serviceName) setActiveService(serviceName);
     setCurrentScreen(screen);
+  };
+
+  const handleLogin = (name: string) => {
+    setUserName(name || 'User');
+    navigate('home');
   };
 
   const t = translations[lang];
@@ -26,13 +33,13 @@ function App() {
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Top Navigation Bar */}
       <header className="bg-white border-b border-gray-100 px-6 py-4 flex justify-between items-center sticky top-0 z-50">
-        <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('home')}>
+        <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('splash')}>
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold">M</div>
           <span className="text-xl font-bold text-secondary hidden sm:inline">MediBuddy</span>
         </div>
 
         <div className="flex items-center gap-6">
-          {currentScreen !== 'splash' && (
+          {currentScreen !== 'splash' && currentScreen !== 'login' && (
             <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-500">
               <button onClick={() => navigate('home')} className={currentScreen === 'home' ? 'text-primary' : ''}>Home</button>
               <button onClick={() => navigate('doctor')} className={currentScreen === 'doctor' ? 'text-primary' : ''}>Doctors</button>
@@ -63,7 +70,8 @@ function App() {
         <div className="w-full max-w-6xl p-0 sm:p-6 md:p-8">
           <div className="bg-white min-h-[80vh] sm:rounded-3xl sm:shadow-xl overflow-hidden relative border border-gray-100">
             {currentScreen === 'splash' && <Splash onNavigate={navigate} t={t} />}
-            {currentScreen === 'home' && <Home onNavigate={navigate} t={t} />}
+            {currentScreen === 'login' && <Login onLogin={handleLogin} t={t} />}
+            {currentScreen === 'home' && <Home onNavigate={navigate} t={t} userName={userName} />}
             {currentScreen === 'doctor' && <DoctorProfile onNavigate={navigate} t={t} />}
             {currentScreen === 'medicine' && <MedicineDetail onNavigate={navigate} t={t} />}
             {currentScreen === 'service' && <ServiceDetail onNavigate={navigate} serviceName={activeService} t={t} />}
