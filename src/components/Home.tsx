@@ -61,12 +61,12 @@ export default function Home({ onNavigate, t }: Props) {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
                 <QuickAccessItem icon={<User size={24} className="text-blue-500" />} bg="bg-blue-50" label={t.doctors} onClick={() => onNavigate('doctor')} />
                 <QuickAccessItem icon={<Pill size={24} className="text-red-500" />} bg="bg-red-50" label={t.medicines} onClick={() => onNavigate('medicine')} />
-                <QuickAccessItem icon={<FlaskConical size={24} className="text-teal-500" />} bg="bg-teal-50" label={t.labTests} />
-                <QuickAccessItem icon={<Shield size={24} className="text-purple-500" />} bg="bg-purple-50" label={t.healthPlans} />
-                <QuickAccessItem icon={<HeartPulse size={24} className="text-rose-500" />} bg="bg-rose-50" label={t.symptoms} />
-                <QuickAccessItem icon={<Activity size={24} className="text-blue-400" />} bg="bg-blue-50" label={t.careProgram} />
-                <QuickAccessItem icon={<FileText size={24} className="text-green-500" />} bg="bg-green-50" label={t.healthRecords} />
-                <QuickAccessItem icon={<LayoutGrid size={24} className="text-gray-500" />} bg="bg-gray-100" label={t.more} />
+                <QuickAccessItem icon={<FlaskConical size={24} className="text-teal-500" />} bg="bg-teal-50" label={t.labTests} onClick={() => onNavigate('service', 'Lab Tests')} />
+                <QuickAccessItem icon={<Shield size={24} className="text-purple-500" />} bg="bg-purple-50" label={t.healthPlans} onClick={() => onNavigate('service', 'Health Plans')} />
+                <QuickAccessItem icon={<HeartPulse size={24} className="text-rose-500" />} bg="bg-rose-50" label={t.symptoms} onClick={() => onNavigate('service', 'Symptoms')} />
+                <QuickAccessItem icon={<Activity size={24} className="text-blue-400" />} bg="bg-blue-50" label={t.careProgram} onClick={() => onNavigate('service', 'Care Program')} />
+                <QuickAccessItem icon={<FileText size={24} className="text-green-500" />} bg="bg-green-50" label={t.healthRecords} onClick={() => onNavigate('service', 'Health Records')} />
+                <QuickAccessItem icon={<LayoutGrid size={24} className="text-gray-500" />} bg="bg-gray-100" label={t.more} onClick={() => onNavigate('service', 'More Services')} />
               </div>
             </div>
           </div>

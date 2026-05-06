@@ -3,22 +3,28 @@ import Splash from './components/Splash';
 import Home from './components/Home';
 import DoctorProfile from './components/DoctorProfile';
 import MedicineDetail from './components/MedicineDetail';
+import ServiceDetail from './components/ServiceDetail';
 import Chatbot from './components/Chatbot';
 import { translations, Language } from './translations';
 import { Globe } from 'lucide-react';
 
-export type Screen = 'splash' | 'home' | 'doctor' | 'medicine';
+export type Screen = 'splash' | 'home' | 'doctor' | 'medicine' | 'service';
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState<Screen>('splash');
   const [lang, setLang] = useState<Language>('en');
+  const [activeService, setActiveService] = useState<string>('');
 
-  const navigate = (screen: Screen) => setCurrentScreen(screen);
+  const navigate = (screen: Screen, serviceName?: string) => {
+    if (serviceName) setActiveService(serviceName);
+    setCurrentScreen(screen);
+  };
+
   const t = translations[lang];
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      {/* Top Navigation Bar for Web App Feel */}
+      {/* Top Navigation Bar */}
       <header className="bg-white border-b border-gray-100 px-6 py-4 flex justify-between items-center sticky top-0 z-50">
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('home')}>
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold">M</div>
@@ -60,14 +66,13 @@ function App() {
             {currentScreen === 'home' && <Home onNavigate={navigate} t={t} />}
             {currentScreen === 'doctor' && <DoctorProfile onNavigate={navigate} t={t} />}
             {currentScreen === 'medicine' && <MedicineDetail onNavigate={navigate} t={t} />}
+            {currentScreen === 'service' && <ServiceDetail onNavigate={navigate} serviceName={activeService} t={t} />}
           </div>
         </div>
       </main>
 
-      {/* AI Chatbot Component */}
       <Chatbot t={t} lang={lang} />
 
-      {/* Footer for Web App Feel */}
       <footer className="bg-white border-t border-gray-100 py-8 px-6 mt-12">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
@@ -76,11 +81,6 @@ function App() {
           </div>
           <div className="text-sm text-gray-400">
             © 2026 MediBuddy Health Services. All rights reserved.
-          </div>
-          <div className="flex gap-6 text-sm text-gray-500 font-medium">
-             <a href="#">Privacy Policy</a>
-             <a href="#">Terms of Service</a>
-             <a href="#">Contact Us</a>
           </div>
         </div>
       </footer>

@@ -40,7 +40,7 @@ export default function Splash({ onNavigate, t }: Props) {
             {t.getStarted}
           </button>
           <div className="text-sm text-gray-500 mt-4">
-            {t.signin}
+            {t.signin.split('?')[0]}? <span className="text-primary font-bold cursor-pointer hover:underline" onClick={() => onNavigate('home')}>{t.signin.split('?')[1]}</span>
           </div>
         </div>
       </div>
