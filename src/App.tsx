@@ -3,6 +3,7 @@ import Splash from './components/Splash';
 import Home from './components/Home';
 import DoctorProfile from './components/DoctorProfile';
 import MedicineDetail from './components/MedicineDetail';
+import Chatbot from './components/Chatbot';
 import { translations, Language } from './translations';
 import { Globe } from 'lucide-react';
 
@@ -46,6 +47,7 @@ function App() {
               <option value="te">తెలుగు</option>
               <option value="mr">मराठी</option>
               <option value="ta">தமிழ்</option>
+              <option value="kn">ಕನ್ನಡ</option>
             </select>
           </div>
         </div>
@@ -61,6 +63,9 @@ function App() {
           </div>
         </div>
       </main>
+
+      {/* AI Chatbot Component */}
+      <Chatbot t={t} lang={lang} />
 
       {/* Footer for Web App Feel */}
       <footer className="bg-white border-t border-gray-100 py-8 px-6 mt-12">
