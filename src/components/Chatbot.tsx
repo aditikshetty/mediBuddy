@@ -55,6 +55,13 @@ export default function Chatbot({ t, lang }: Props) {
       }
 
       setMessages([...newMessages, { text: response, isBot: true, type }]);
+
+      // Save to Backend (MongoDB & API Notification)
+      fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text, response: response, lang: lang })
+      }).catch(err => console.error('Failed to sync with backend:', err));
     }, 1000);
   };
 
